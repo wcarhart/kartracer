@@ -1,6 +1,6 @@
 /*
 *	Project Name: Kart Racer
-*	Group Members: Will Carhart, Alex Alvarez, Matt Saiki
+*	Author: Will Carhart
 *   Class: COMP 350-01
 *	Professor: Dr. Pruski
 *	Date: 5/23/16
