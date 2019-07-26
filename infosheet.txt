@@ -1,0 +1,108 @@
+Info Sheet
+
+Although the program functions beautifully, there are some subtle nuances that
+I'd like to explain to you to make sure you don't miss them, as many of them
+took quite a while to program. Here are all of the fantastic elements of the
+kart racing game:
+
+
+- There are actually individual grass blades scattered across the ground, which
+  are represented with slightly darker shades of green.
+
+- The game has starting lights that restrict the player's access until they
+  turn green.
+
+- Rather than using a switch block to detect keyboard events, there is a 
+  boolean array, with one boolean representing each possible keyboard input; 
+  because the size of a boolean is the same of that of a char (1 byte), we can
+  reference each key's state (pressed or not pressed) by stating
+  'keyStates['a']', for example. This allows multiple keys to be pressed at
+  once, for perhaps accelerating while turning, and produces far less input
+  lag.
+
+- There are two display modes, one right behind the car and one that stays 
+  stationary and watches the car from the origin. As stated in the README, use 
+  '0' and '9' to toggle between these modes.
+
+- There is a very complex working speedometer. It starts at zero and tops out 
+  at the car's max speed. It has little ticks to display the speed, but also
+  has a digital speedometer on the dash. The speedometer also shows what gear
+  the car is in, using 'D' for drive, 'N' for neutral, and 'R' for reverse.
+
+- There is a accurate minimap that can be toggled in the upper right hand 
+  corner of the screen. The icon for the car matches the selected color of the
+  car, and there is an accurate map of the course. Use 'B' and 'N' to toggle
+  the minimap.
+
+- The game is in full 3D, and shows depth accordingly, even when in both
+  different views.
+
+- All of the shapes are built with only three primitives: rectangular prisms
+  (which are created using scaled cubes), wedges, and cylinders. In addition,
+  there are a few shapes that are used in 2D, such as sqaures, triangles, and
+  circles.
+
+- The track is not a simple one; it requires practice and focus to make it
+  through all of the gates. There are long straight sections and also shorter
+  more technical turns. In addition, the track crosses over itself, and so 
+  there are red arrows painted on the ground to help guide the player in the
+  correct direction.
+
+- There are three car models: a sports car, an F1 race car, and a pickup truck.
+  Each car has different moving parts and does more than just drive and turn.
+  The front wheels on each car turn according to the car's movement. The
+  headlights can be turned on or off in the sports car and truck (use 'H' and
+  'Y'). The brake lights light up when breaking, and will turn white when
+  in reverse, just like a real car. To toggle between the three cars, use the
+  left mouse button.
+
+- Each car model has been given specific careful details. The sports car has a
+  spoiler, an air intake on the hood, and a shorter wheelbase. The F1 car has
+  realistic aerodynamics, a double spoiler, three, big exhaust pipes, and a
+  roofless cockpit. The truck has bigger tires and guard around the flatbed to
+  keep cargo from coming out.
+
+- The car models are 100% custom built (not taken anywhere from the internet).
+
+- There are two kinds of checkpoints. The checkpoint with a white flag 
+  represents the start/finish line, while the checkpoints with the grey flags
+  are regular checkpoints.
+
+- The camera position can be moved around the car for the optimal driving 
+  position. It can be moved forward and backward with 'I' and 'O' and up and
+  down with 'U' and 'I'.
+
+- There is a comprehensive README that explains all controls for the program.
+
+- There are some pre-fixed driving positions for the player's ease. Numbers 1
+  through 4 each represent a position, and can be toggled to enter that 
+  position.
+
+- There are 20 different colors available for the cars, and can be selected
+  with the right mouse button. Some features, like tires and spoilers, remain 
+  black regardless of the car's body color. In addition, the car's icon on
+  the minimap will match the chosen car color.
+
+- There are many different shades of black and grey chosen throughout the
+  project, and allow us to add subtle contrasts in our objects.
+
+- The car functions with a system of vectors, for acceleration, velocity, and
+  position. This means that the car has a working set of physics; it has 
+  inertia when it is not accelerating, but also has friction to slow it down.
+  It has a max speed, which it cannot exceed.
+
+- The car is controlled with WASD, and uses 'E' for an emergency brake. The car
+  will always drive forward when 'W' is pressed, and will rotate when 'A' or
+  'D' is pressed.
+
+- Turning is reversed with the car is going backwards, to simulate real life 
+  physics.
+
+- The program uses a combination of 2D and 3D elements, overlaying a 2D hud 
+  containing speedometer and minimap over the 3D scene. This was accomplished
+  by changing our matrix mode halfway through our display callback.
+
+- The program is almost 3000 lines of code, and every single line does
+  something very important (there is no fluff code).
+
+- There are 37 functions and 57 global variables.
